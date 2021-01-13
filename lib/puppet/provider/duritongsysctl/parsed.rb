@@ -2,7 +2,7 @@ require 'puppet/provider/parsedfile'
 
 sysctlconf = "/etc/sysctl.conf"
 
-Puppet::Type.type(:sysctl).provide(:parsed,
+Puppet::Type.type(:duritongsysctl).provide(:parsed,
                                    :parent => Puppet::Provider::ParsedFile,
                                    :default_target => sysctlconf,
                                    :filetype => :flat

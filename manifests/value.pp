@@ -17,7 +17,11 @@ define sysctl::value (
   require sysctl::base
   $val1 = inline_template("<%= String(@value).split(/[\s\t]/).reject(&:empty?).flatten.join(\"\t\") %>")
 
-  sysctl { $key :
+  notify { "duritongsysctl_${name}":
+    message => 'sysctl::value has been deprecated, please use sysctl instead. See https://wiki.rc.nectar.org.au/wiki/Changes/0132',
+  }
+
+  duritongsysctl { $key :
     val    => $val1,
     target => $target,
     before => Sysctl_runtime[$key],
