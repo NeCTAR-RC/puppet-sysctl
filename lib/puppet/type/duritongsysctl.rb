@@ -1,4 +1,4 @@
-Puppet::Type.newtype(:sysctl) do
+Puppet::Type.newtype(:duritongsysctl) do
 
         @doc = "Manages kernel parameters in /etc/sysctl.conf.  This will
                 only edit the configuration file, and not change any of the runtime
